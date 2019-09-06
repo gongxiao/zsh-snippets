@@ -68,14 +68,14 @@ _delete_zsh_snippets() {
 
 _list_zsh_snippets() {
     source $SNIPPET_FILE
-    local snippetList="$(print -a -C 2 ${(kv)zshSnippetArr})"
+    local snippetList="$(print -r -a -C 2 ${(kv)zshSnippetArr})"
 
-    echo "$snippetList"
+    echo -E "$snippetList"
 }
 
 zsh-snippets-widget-list() {
     source $SNIPPET_FILE
-    local snippetList="$(print -a -C 2 ${(kv)zshSnippetArr})"
+    local snippetList="$(print -r -a -C 2 ${(kv)zshSnippetArr})"
     zle -M "$snippetList"
 }
 zle -N zsh-snippets-widget-list
